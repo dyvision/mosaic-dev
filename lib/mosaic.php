@@ -18,7 +18,7 @@ namespace mosaic {
             $params = [
                 'client_id=8ef01039251f4b9a8a213ae17ef0e570',
                 'response_type=code',
-                'redirect_uri=https://dev.plumeware.com/mosaic-dev/create.php',
+                'redirect_uri=https://mosaic-dev.paos.io/create.php',
                 'scope=playlist-read-private%20playlist-read-collaborative%20user-top-read'
             ];
 
@@ -42,13 +42,13 @@ namespace mosaic {
                 $params = [
                     "code=$code",
                     "grant_type=$type",
-                    'redirect_uri=https://dev.plumeware.com/mosaic-dev/create.php'
+                    'redirect_uri=https://mosaic-dev.paos.io/create.php'
                 ];
             } else {
                 $params = [
                     "refresh_token=$code",
                     "grant_type=$type",
-                    'redirect_uri=https://dev.plumeware.com/mosaic-dev/create.php'
+                    'redirect_uri=https://mosaic-dev.paos.io/create.php'
                 ];
             }
 

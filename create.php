@@ -13,7 +13,7 @@ try {
     $token = json_decode($mosaic->authenticate($_GET['code'],'authorization_code'),true);
     $userj = json_decode($mosaic->verify($token['access_token']),true);
     $create = json_decode($user->create($userj['id'],$token['refresh_token']),true);
-    shell_exec('curl https://dev.plumeware.com/mosaic-dev/api/lists.php &');
+    shell_exec('curl https://mosaic-dev.paos.io/api/lists.php &');
     if(isset($create['guid'])){
         $mosaic->login($token['access_token'],$token['refresh_token'],$create['guid']);
     } else {
@@ -21,5 +21,5 @@ try {
     }
     header('location: /home.php');
 } catch (Exception $e) {
-    header('location: https://dev.plumeware.com/mosaic-dev/authorize.php');
+    header('location: https://mosaic-dev.paos.io/authorize.php');
 }
